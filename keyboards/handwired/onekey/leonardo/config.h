@@ -18,13 +18,26 @@
 
 #include "config_common.h"
 
-#define MATRIX_COL_PINS { F4 }
-#define MATRIX_ROW_PINS { F5 }
+#define MATRIX_COL_PINS { D1}
+#define MATRIX_ROW_PINS { D6}
 #define UNUSED_PINS
 
-// #define BACKLIGHT_PIN B6
+#undef DIODE_DIRECTION
+#define DIODE_DIRECTION ROW2COL
 
-// #define RGB_DI_PIN F6
-// #define RGB_CI_PIN B1
+/* #define BACKLIGHT_PIN B6
+   #define BACKLIGHT_BREATHING */
 
-// #define ADC_PIN F6
+#undef DEBOUNCE
+#define DEBOUNCE 10
+
+
+/* 
+
+
+#define RGB_DI_PIN F6
+#define RGB_CI_PIN B1
+
+#define ADC_PIN F6
+
+*/
