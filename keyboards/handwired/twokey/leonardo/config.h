@@ -18,6 +18,10 @@
 
 #include "config_common.h"
 
+// Red is the common/ground
+// White 1 pin
+// Yellow other pin
+
 #define MATRIX_COL_PINS { D6, B5}
 #define MATRIX_ROW_PINS { D1}
 #define UNUSED_PINS
