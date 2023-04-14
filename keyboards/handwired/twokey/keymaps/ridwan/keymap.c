@@ -50,7 +50,9 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  LAYOUT_ortho_1x2(KC_GRV, MY_KEY)
+  // LAYOUT_ortho_1x2(KC_GRV, MY_KEY)
+  // LAYOUT_ortho_1x2(KC_MS_BTN2, MY_KEY)
+  LAYOUT_ortho_1x2(KC_MS_BTN1, KC_MS_BTN2)  
 };
 
 bool process_record_user (uint16_t keycode, keyrecord_t *record) {
@@ -58,7 +60,6 @@ bool process_record_user (uint16_t keycode, keyrecord_t *record) {
   switch(keycode) {
   case MY_KEY:
     if (record->event.pressed) {
-       SEND_STRING("Mahmudul Hasan");
        // if (status ==0) {
        //   status = 1;
        //   unregister_code(KC_LCTL);
@@ -69,7 +70,12 @@ bool process_record_user (uint16_t keycode, keyrecord_t *record) {
        //   register_code(KC_LCTL);
        //   writePinLow(GREEN_LED);
        //   writePinHigh(RED_LED);
-       // } 
+       // }
+      // SEND_STRING(SS_LSFT(""));
+      register_code(KC_LSFT);
+      register_code(KC_MS_BTN2);
+      unregister_code(KC_MS_BTN2);
+      unregister_code(KC_LSFT);
     }
     return false;
   }
